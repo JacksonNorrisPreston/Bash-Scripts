@@ -1,0 +1,7 @@
+#Cron job for simple maintenance stuff. 
+
+0 2 * * * /bin/sh backup.sh #Runs 2AM daily
+
+/usr/local/bin/backup.sh
+
+export PUBLICIP=$(dig +short $myip.opendns.com @resolver1.opendns.com)

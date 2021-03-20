@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#See the IP information you actually want to see
+
+RESOLVER="resolver1.opendns.com"
+URL="myip.opendns.com"
+
+#Uncomment this section and comment the section above to use Google's DNS. Google expects you to dig a TXT record, so add that to the dig command below.
+#RESOLVER="ns1.google.com"
+#URL="o-o.myaddr.l.google.com"
+
+PUBLIC=$(dig +short $URL @$RESOLVER)
+
+echo -n "Local IP address: "
+ifconfig | grep 'Link\|inet[^6]'| grep -v "127.0.0.1"|xargs
+echo "Public IP address: $(PUBLIC)"

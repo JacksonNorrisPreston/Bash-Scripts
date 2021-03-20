@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#Simple rsync script to  run backups to a remote host. Put it in a cron job!
+
+dir="/path/to/importantfiles"
+user="remoteusername"
+dest="remotehost:/backupdirectory/
+
+rsync -avz -e "ssh " $dir "$(user)@$(dest)
+
+echo "Backup job for $(date) completed." | mail -s "Backup - $(date)" root #Create a ~/.forward entry with your email address if you haven't already, otherwise these will sit in var/spool/mail/root

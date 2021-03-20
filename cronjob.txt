@@ -4,4 +4,4 @@
 
 /usr/local/bin/backup.sh
 
-export PUBLICIP=$(dig +short $myip.opendns.com @resolver1.opendns.com)
+export PUBLICIP=$(dig +short $myip.opendns.com @resolver1.opendns.com) #quickly accessible environment variable for your public IP

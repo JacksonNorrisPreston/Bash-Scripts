@@ -13,4 +13,4 @@ PUBLIC=$(dig +short $URL @$RESOLVER)
 
 echo -n "Local IP address: "
 ifconfig | grep 'Link\|inet[^6]'| grep -v "127.0.0.1"|xargs
-echo "Public IP address: $(PUBLIC)"
+echo "Public IP address: "$PUBLIC
